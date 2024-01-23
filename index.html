@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Calculator</title>
+ 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Electricity Bill Calculator</h1>
+
+        <!-- Fields to be entered by the user -->
+        <label for="onPeak">Enter kWh used during on-peak hours</label>
+        <input type="number" id="onPeak" placeholder="Enter on-peak hours">
+
+        <label for="offPeak">Enter kWh used during off-peak hours</label>
+        <input type="number" id="offPeak" placeholder="Enter off-peak hours">
+
+        <label for="province">Province of Residence</label>
+        <select id="province">
+            <option value="ON">Ontario</option>
+            <option value="BC">British Columbia</option>
+        </select>
+
+        <button id="submitBtn">Calculate</button>
+
+        <!-- Receipt Area -->
+        <div id="receipt" class="hidden">
+                <h2>Electricity Bill Receipt</h2>
+
+                <!-- Consumption -->
+                <p>On-Peak Consumption: <span id="receiptOnPeak"></span> kWh</p>
+                <p>Off-Peak Consumption: <span id="receiptOffPeak"></span> kWh</p>
+                <p>Province: <span id="receiptProvince"></span></p>
+
+                <!-- Charges -->
+                <div class="hours-box">
+                <h3>Charges</h3>
+                <p>On-Peak Charge: $<span id="onPeakCharge"></span></p>
+                <p>Off-Peak Charge: $<span id="offPeakCharge"></span></p>
+                </div>
+
+                <p>Gross Consumption Charges: $<span id="grossConsumptionCharges"></span></p>
+                <p>Sales tax (13%): $<span id="hstAmount"></span></p>
+            
+                <p>Provincial Rebate: $<span id="provincialRebate"></span></p>
+            
+                <div class="total-box">
+                <h3>Total to Pay</h3>
+                <p>$<span id="netConsumptionCharges"></span></p>
+                </div>
+
+        </div>
+    </div>
+
+    <script src="electricity.js"></script>
+</body>
+</html>
